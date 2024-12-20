@@ -18,7 +18,7 @@ def convert_img_files(directory, input_ext, output_ext):
                 print(f'Converted {input_path} to {output_path}')
 
 # 변환할 디렉터리 지정
-directory_path = 'C:\\Workspace\\work-python\\Photos'
+directory_path = 'C:\\work-python\\Photos'
 input_ext = '.heic'
 output_ext = '.png'  # 여기서 점을 포함하지 않고 'png'라고 해도 됩니다.
 convert_img_files(directory_path, input_ext, output_ext)

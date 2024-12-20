@@ -5,12 +5,12 @@ from selenium.common.exceptions import NoSuchElementException, WebDriverExceptio
 import time
 
 # ChromeDriver 경로 설정
-chrome_driver_path = r"C:\Workspace\work-python\chromedriver-win64\chromedriver.exe"
+chrome_driver_path = r"C:\chromedriver-win64\chromedriver.exe"
 service = Service(chrome_driver_path)
 
 # Selenium WebDriver 옵션 설정
 options = webdriver.ChromeOptions()
-prefs = {"download.default_directory": r"C:\Workspace\work-python\Downloads"}  # 파일 다운로드 경로 설정
+prefs = {"download.default_directory": r"C:\work-python\Downloads"}  # 파일 다운로드 경로 설정
 options.add_experimental_option("prefs", prefs)
 
 # WebDriver 초기화
