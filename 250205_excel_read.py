@@ -1,5 +1,9 @@
 import pandas as pd
 import glob
+import warnings
+
+# 특정 경고 메시지를 무시하도록 설정
+warnings.filterwarnings("ignore", message="Workbook contains no default style, apply openpyxl's default")
 
 # "교육훈련실적 내역"으로 시작하는 모든 .xlsx 파일 목록을 가져옵니다.
 file_pattern = "교육훈련실적 내역*.xlsx"
@@ -36,4 +40,4 @@ for file in file_list:
     print(f"파일 {file} 처리 완료. 열 이름: {df.columns.tolist()}")
 
     # 필요한 경우, 처리한 결과를 새로운 파일로 저장할 수 있습니다.
-    # df.to_excel("processed_" + file, index=False)
+    df.to_excel("processed_" + file, index=False)
