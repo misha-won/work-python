@@ -15,11 +15,13 @@ for file in files:
     
     # 문자열 비교를 위해 해당 열들을 문자열로 변환한 후, na 값은 False 처리
     cond_edu = df["교육기관명"].astype(str).str.contains("도서관", na=False)
-    cond_title = df["제목"].astype(str).str.contains("사서", na=False)
-    cond_content = df["내용"].astype(str).str.contains("사서", na=False)
+    cond_title1 = df["제목"].astype(str).str.contains("사서", na=False)
+    cond_title2 = df["제목"].astype(str).str.contains("문헌", na=False)
+    cond_content1 = df["내용"].astype(str).str.contains("사서", na=False)
+    cond_content2 = df["내용"].astype(str).str.contains("문헌", na=False)
     
-    # 조건: "교육기관명"에 "도서관"이 포함되거나, "제목" 또는 "내용"에 "사서"가 포함되는 행
-    condition = cond_edu | cond_title | cond_content
+    # 조건: "교육기관명"에 "도서관"이 포함되거나, "제목" 또는 "내용"에 "사서" 또는 "문헌"이 포함되는 행
+    condition = cond_edu | cond_title1 | cond_title2 | cond_content1 | cond_content2
     filtered_df = df[condition]
     
     # 필터링된 행 개수와 "실적시간" 열의 합계 계산
