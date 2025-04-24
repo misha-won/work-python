@@ -6,8 +6,13 @@ file_name = "2025년 폭력예방교육 이수명단(시립도서관).xlsx"
 df = pd.read_excel(file_name, header=2)
 
 # 생년월일 열 데이터를 리스트 변수로 초기화
-prev_birth = df["생년월일"].tolist()
-new_birth = []
+prev_births = df["생년월일"].tolist()
+new_births = []
+
+# 생년월일 열 데이터 수정 후 새 리스트에 저장
+for prev_birth in prev_births:
+    new_birth = prev_birth + "."
+    new_births.append(new_birth)
 
 # 기존 열 이름 리스트 가져오기
 cols = list(df.columns)
