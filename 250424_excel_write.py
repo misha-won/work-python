@@ -5,6 +5,10 @@ file_name = "2025년 폭력예방교육 이수명단(시립도서관).xlsx"
 # 세 번째 행을 헤더로 지정하여 파일 읽기
 df = pd.read_excel(file_name, header=2)
 
+# 생년월일 열 데이터를 리스트 변수로 초기화
+prev_birth = df["생년월일"].tolist()
+new_birth = []
+
 # 기존 열 이름 리스트 가져오기
 cols = list(df.columns)
 
